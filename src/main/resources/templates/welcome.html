@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http//www.thymeleaf.org/extras/spring-security">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Spring Security</title>
+</head>
+<body>
+<h1>WELCOME TO SPRING SECURITY</h1>
+<h2 sec:authentication="principal.username"></h2>
+<h2 sec:authentication="principal.authorities"></h2>
+<a th:href="@{/admin}">GET ADMIN PAGE</a><br><br>
+<a th:href="@{/hr}">GET HR PAGE</a><br><br>
+<a th:href="@{/tracker}">GET TRACKER PAGE</a>
+
+<form th:action="@{/logout}" method="post">
+    <input type="submit" value="LOGOUT">
+</form>
+</body>
+</html>
